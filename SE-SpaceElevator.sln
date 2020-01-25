@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29001.49
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "SpaceElevator - Shared", "SpaceElevator - Shared\SpaceElevator - Shared.shproj", "{0A117477-6C2A-40AC-A8EB-FDCD2DFE11BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpaceElevator - Carriage", "SpaceElevator - Carriage\SpaceElevator - Carriage.csproj", "{D3DB145B-4DB0-4334-AE5C-E046464F6B4C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpaceElevator - COMMs Reciever", "SpaceElevator - COMMs Reciever\SpaceElevator - COMMs Reciever.csproj", "{07280390-4C98-4B20-A2EB-F4DBE5713CEF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpaceElevator - OPS Center", "SpaceElevator - OPS Center\SpaceElevator - OPS Center.csproj", "{FE456DAE-1E85-4D99-A25D-AA819E217AF3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpaceElevator - Station", "SpaceElevator - Station\SpaceElevator - Station.csproj", "{7668C9B9-78DE-4B35-A141-D528F0704D4A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1E5086CA-C979-4791-ACC1-97A2BCB9BDFC}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		Block Actions.txt = Block Actions.txt
+		Block Properties.txt = Block Properties.txt
+		FontData.xml = FontData.xml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		SpaceElevator - Shared\SpaceElevator - Shared.projitems*{07280390-4c98-4b20-a2eb-f4dbe5713cef}*SharedItemsImports = 4
+		SpaceElevator - Shared\SpaceElevator - Shared.projitems*{0a117477-6c2a-40ac-a8eb-fdcd2dfe11ba}*SharedItemsImports = 13
+		SpaceElevator - Shared\SpaceElevator - Shared.projitems*{7668c9b9-78de-4b35-a141-d528f0704d4a}*SharedItemsImports = 4
+		SpaceElevator - Shared\SpaceElevator - Shared.projitems*{d3db145b-4db0-4334-ae5c-e046464f6b4c}*SharedItemsImports = 4
+		SpaceElevator - Shared\SpaceElevator - Shared.projitems*{fe456dae-1e85-4d99-a25d-aa819e217af3}*SharedItemsImports = 4
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D3DB145B-4DB0-4334-AE5C-E046464F6B4C}.Debug|x64.ActiveCfg = Debug|x64
+		{D3DB145B-4DB0-4334-AE5C-E046464F6B4C}.Debug|x64.Build.0 = Debug|x64
+		{07280390-4C98-4B20-A2EB-F4DBE5713CEF}.Debug|x64.ActiveCfg = Debug|x64
+		{07280390-4C98-4B20-A2EB-F4DBE5713CEF}.Debug|x64.Build.0 = Debug|x64
+		{FE456DAE-1E85-4D99-A25D-AA819E217AF3}.Debug|x64.ActiveCfg = Debug|x64
+		{FE456DAE-1E85-4D99-A25D-AA819E217AF3}.Debug|x64.Build.0 = Debug|x64
+		{7668C9B9-78DE-4B35-A141-D528F0704D4A}.Debug|x64.ActiveCfg = Debug|x64
+		{7668C9B9-78DE-4B35-A141-D528F0704D4A}.Debug|x64.Build.0 = Debug|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AB8E8FFF-3C4B-476B-B4B3-7EAC1E878CDF}
+	EndGlobalSection
+EndGlobal
