@@ -29,12 +29,15 @@ namespace IngameScript {
         int _configHash = 0;
         IMyProgrammableBlock _targetProgram = null;
         IMyTextPanel _display = null;
+        IMyBroadcastListener _listener = null;
 
 
         public Program() {
             //Echo = (t) => { }; // Disable Echo
             _settings.InitConfig(_config);
             _log.Enabled = false;
+            _listener = IGC.RegisterBroadcastListener(COMMsModule.BroadcastTag);
+            _listener.SetMessageCallback(COMMsModule.IgcUpdateGrid);
         }
 
         public void Main(string argument, UpdateType updateSource) {
@@ -50,7 +53,10 @@ namespace IngameScript {
 
                 if (_targetProgram == null) return;
 
-                ProcessArgument(argument);
+                if (argument == COMMsModule.IgcUpdateGrid && (updateSource & UpdateType.IGC) != 0) {
+                    var msg = _listener.AcceptMessage();
+                    ProcessArgument(msg.Data as string ?? string.Empty);
+                }
                 ProcessQueue();
 
                 if (_log.Enabled) {

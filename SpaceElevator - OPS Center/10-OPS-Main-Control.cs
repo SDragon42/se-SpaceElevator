@@ -35,7 +35,7 @@ namespace IngameScript {
                     RunCommand(argument);
 
                 if (runInterval) {
-                    _comms.TransmitQueue(_antenna);
+                    _comms.TransmitQueue();
 
                     BuildDisplays();
                     UpdateDisplays();

@@ -27,7 +27,7 @@ namespace IngameScript {
 
             _lastCustomDataHash = -1;
 
-            _comms = new COMMsModule(Me);
+            _comms = new COMMsModule(Me, IGC);
 
             _displayText[DisplayKeys.ALL_CARRIAGES] = "";
             _displayText[DisplayKeys.ALL_CARRIAGES_WIDE] = "";

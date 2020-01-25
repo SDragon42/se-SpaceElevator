@@ -21,11 +21,16 @@ namespace IngameScript {
     partial class Program {
         class COMMsModule {
 
+            public const string BroadcastTag = "SpaceElevator";
+            public const string IgcUpdateGrid = "UpdateGrid";
+
             readonly Queue<CommMessage> _messageQueue = new Queue<CommMessage>();
             readonly IMyProgrammableBlock _prog;
+            readonly IMyIntergridCommunicationSystem _igc;
 
-            public COMMsModule(IMyProgrammableBlock program) {
+            public COMMsModule(IMyProgrammableBlock program, IMyIntergridCommunicationSystem igc) {
                 _prog = program;
+                _igc = igc;
             }
 
             public void AddMessageToQueue(BasePayloadMessage payload, params string[] recievers) {
@@ -37,12 +42,18 @@ namespace IngameScript {
                 }
             }
 
-            public void TransmitQueue(IMyRadioAntenna transmitter) {
-                if (transmitter == null) return;
+            //public void TransmitQueue(IMyRadioAntenna transmitter) {
+            //    if (transmitter == null) return;
+            //    if (_messageQueue.Count == 0) return;
+            //    var message = _messageQueue.Dequeue();
+            //    var success = transmitter.TransmitMessage(message.ToString());
+            //    if (!success) _messageQueue.Enqueue(message);
+            //}
+            public void TransmitQueue() {
                 if (_messageQueue.Count == 0) return;
+
                 var message = _messageQueue.Dequeue();
-                var success = transmitter.TransmitMessage(message.ToString());
-                if (!success) _messageQueue.Enqueue(message);
+                _igc.SendBroadcastMessage(BroadcastTag, message.ToString(), TransmissionDistance.AntennaRelay);
             }
         }
     }

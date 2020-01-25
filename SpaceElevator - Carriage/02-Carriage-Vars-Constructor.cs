@@ -27,7 +27,7 @@ namespace IngameScript {
 
             _lastCustomDataHash = -1;
 
-            _comms = new COMMsModule(Me);
+            _comms = new COMMsModule(Me, IGC);
 
             _mode_SpecialUseOnly = CarriageMode.Init;
             LoadState();

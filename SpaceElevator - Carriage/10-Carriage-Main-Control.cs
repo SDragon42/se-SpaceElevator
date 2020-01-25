@@ -43,7 +43,7 @@ namespace IngameScript {
                     LoadCalculations();
                     RunModeActions();
                     SaveLastValues();
-                    _comms.TransmitQueue(_antenna);
+                    _comms.TransmitQueue();
                     if (_gravityGen != null)
                         _gravityGen.Enabled = (_gravVec.Length() < GRAV_Force_Earth / 2);
                 }

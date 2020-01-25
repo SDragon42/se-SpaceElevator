@@ -41,7 +41,7 @@ namespace IngameScript {
                 }
             }
 
-            _comms = new COMMsModule(Me);
+            _comms = new COMMsModule(Me, IGC);
 
             Runtime.UpdateFrequency = UpdateFrequency.Update10;
         }

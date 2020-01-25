@@ -36,7 +36,7 @@ namespace IngameScript {
                     RunCommand(argument);
 
                 if (runInterval) {
-                    _comms.TransmitQueue(_antenna);
+                    _comms.TransmitQueue();
                     RunCarriageDockDepartureActions(TAG_A1, _A1);
                     RunCarriageDockDepartureActions(TAG_A2, _A2);
                     RunCarriageDockDepartureActions(TAG_B1, _B1);
