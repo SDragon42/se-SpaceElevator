@@ -21,6 +21,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)COMMs\Payload Messages\StationResponseMessage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)COMMs\Payload Messages\UpdateAllDisplaysMessage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Displays.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DisplayConfig.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Constants.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Extensions\IMyGridTerminalSystemExtensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Extensions\ToPrimativeExtensions.cs" />

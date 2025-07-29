@@ -84,14 +84,5 @@ namespace IngameScript {
             public const string CONTROL_LOG = "[control-log]";
             public const string COMMS_LOG = "[comm-log]";
         }
-
-        static class FontSizes {
-            public const float CARRIAGE_GFX = 0.97f;
-            public const float DESTINATION = 1.75f;
-            public const float SPEED = 1.3f;
-            public const float FUEL = 1.3f;
-            public const float CARGO = 1.3f;
-            public const float LOG = 0.5f;
-        }
     }
 }

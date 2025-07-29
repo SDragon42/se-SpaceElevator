@@ -22,41 +22,41 @@ namespace IngameScript {
 
         void DisplayProcessing(string payload) {
             var msg = UpdateAllDisplaysMessage.CreateFromPayload(payload);
-            _displaysAllCarriages.ForEach(d => Displays.Write2MonospaceDisplay(d, msg.AllCarriages, FontSizes.CARRIAGE_GFX));
-            _displaysAllCarriagesWide.ForEach(d => Displays.Write2MonospaceDisplay(d, msg.AllCarriagesWide, FontSizes.CARRIAGE_GFX));
-            _displaysAllPassengerCarriages.ForEach(d => Displays.Write2MonospaceDisplay(d, msg.AllPassCarriages, FontSizes.CARRIAGE_GFX));
-            _displaysAllPassengerCarriagesWide.ForEach(d => Displays.Write2MonospaceDisplay(d, msg.AllPassCarriagesWide, FontSizes.CARRIAGE_GFX));
+            _displaysAllCarriages.ForEach(d => Displays.Write2MonospaceDisplay(d, msg.AllCarriages, DisplayConfig.GetCarriageGfx(d)));
+            _displaysAllCarriagesWide.ForEach(d => Displays.Write2MonospaceDisplay(d, msg.AllCarriagesWide, DisplayConfig.GetCarriageGfx(d)));
+            _displaysAllPassengerCarriages.ForEach(d => Displays.Write2MonospaceDisplay(d, msg.AllPassCarriages, DisplayConfig.GetCarriageGfx(d)));
+            _displaysAllPassengerCarriagesWide.ForEach(d => Displays.Write2MonospaceDisplay(d, msg.AllPassCarriagesWide, DisplayConfig.GetCarriageGfx(d)));
         }
 
         void UpdateDisplays() {
             if (_displaysSingleCarriages.Count > 0) {
                 var text = Displays.BuildOneCarriageDisplay(Me.CubeGrid.CustomName, _status, retransRingMarker: true);
-                _displaysSingleCarriages.ForEach(d => Displays.Write2MonospaceDisplay(d, text, FontSizes.CARRIAGE_GFX));
+                _displaysSingleCarriages.ForEach(d => Displays.Write2MonospaceDisplay(d, text, DisplayConfig.GetCarriageGfx(d)));
             }
 
             if (_displaysSingleCarriagesDetailed.Count > 0) {
                 var text = Displays.BuildOneCarriageDisplay(Me.CubeGrid.CustomName, _status, retransRingMarker: true, opsDetail: true);
-                _displaysSingleCarriagesDetailed.ForEach(d => Displays.Write2MonospaceDisplay(d, text, FontSizes.CARRIAGE_GFX));
+                _displaysSingleCarriagesDetailed.ForEach(d => Displays.Write2MonospaceDisplay(d, text, DisplayConfig.GetCarriageGfx(d)));
             }
 
             if (_displaySpeed.Count > 0) {
                 var text = Displays.BuildSpeedDisplayText(_verticalSpeed, _rangeToDestination);
-                _displaySpeed.ForEach(d => Displays.Write2MonospaceDisplay(d, text, FontSizes.SPEED));
+                _displaySpeed.ForEach(d => Displays.Write2MonospaceDisplay(d, text, DisplayConfig.SPEED));
             }
 
             if (_displayDestination.Count > 0) {
-                var text = Displays.BuildDestinationDisplayText(_destination?.Name ?? GetMode().ToString().Replace('_', ' '));
-                _displayDestination.ForEach(d => Displays.Write2MonospaceDisplay(d, text, FontSizes.DESTINATION));
+                var text = _destination?.Name ?? GetMode().ToString().Replace('_', ' ');
+                _displayDestination.ForEach(d => Displays.Write2MonospaceDisplay(d, text, DisplayConfig.DESTINATION));
             }
 
             if (_displayCargo.Count > 0) {
                 var text = Displays.BuildCargoDisplayText(_cargoMass);
-                _displayCargo.ForEach(d => Displays.Write2MonospaceDisplay(d, text, FontSizes.CARGO));
+                _displayCargo.ForEach(d => Displays.Write2MonospaceDisplay(d, text, DisplayConfig.CARGO));
             }
 
             if (_displayFuel.Count > 0) {
                 var text = Displays.BuildFuelDisplayText(_h2TankFilledPercent);
-                _displayFuel.ForEach(d => Displays.Write2MonospaceDisplay(d, text, FontSizes.FUEL));
+                _displayFuel.ForEach(d => Displays.Write2MonospaceDisplay(d, text, DisplayConfig.FUEL));
             }
 
         }

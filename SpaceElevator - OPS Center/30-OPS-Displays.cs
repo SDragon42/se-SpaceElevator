@@ -43,7 +43,7 @@ namespace IngameScript {
 
             if (_displaysAllCarriages.Count > 0) {
                 var text = Displays.BuildAllCarriageDisplayText(a1Status, a2Status, b1Status, b2Status, maintStatus);
-                _displaysAllCarriages.ForEach(d => Displays.Write2MonospaceDisplay(d, text, FontSizes.CARRIAGE_GFX));
+                _displaysAllCarriages.ForEach(d => Displays.Write2MonospaceDisplay(d, text, DisplayConfig.GetCarriageGfx(d)));
             }
 
             SetDisplayText(
@@ -69,23 +69,23 @@ namespace IngameScript {
 
 
         void UpdateDisplays() {
-            _displaysAllCarriages.ForEach(d => Displays.Write2MonospaceDisplay(d, GetDisplayText(DisplayKeys.ALL_CARRIAGES), FontSizes.CARRIAGE_GFX));
-            _displaysAllCarriagesWide.ForEach(d => Displays.Write2MonospaceDisplay(d, GetDisplayText(DisplayKeys.ALL_CARRIAGES_WIDE), FontSizes.CARRIAGE_GFX));
+            _displaysAllCarriages.ForEach(d => Displays.Write2MonospaceDisplay(d, GetDisplayText(DisplayKeys.ALL_CARRIAGES), DisplayConfig.GetCarriageGfx(d)));
+            _displaysAllCarriagesWide.ForEach(d => Displays.Write2MonospaceDisplay(d, GetDisplayText(DisplayKeys.ALL_CARRIAGES_WIDE), DisplayConfig.GetCarriageGfx(d)));
 
-            _displaysAllPassengerCarriages.ForEach(d => Displays.Write2MonospaceDisplay(d, GetDisplayText(DisplayKeys.ALL_PASSENGER_CARRIAGES), FontSizes.CARRIAGE_GFX));
-            _displaysAllPassengerCarriagesWide.ForEach(d => Displays.Write2MonospaceDisplay(d, GetDisplayText(DisplayKeys.ALL_PASSENGER_CARRIAGES_WIDE), FontSizes.CARRIAGE_GFX));
+            _displaysAllPassengerCarriages.ForEach(d => Displays.Write2MonospaceDisplay(d, GetDisplayText(DisplayKeys.ALL_PASSENGER_CARRIAGES), DisplayConfig.GetCarriageGfx(d)));
+            _displaysAllPassengerCarriagesWide.ForEach(d => Displays.Write2MonospaceDisplay(d, GetDisplayText(DisplayKeys.ALL_PASSENGER_CARRIAGES_WIDE), DisplayConfig.GetCarriageGfx(d)));
 
             foreach (var d in _displaysSingleCarriages) {
                 if (Collect.IsTagged(d, TAG_A1)) {
-                    Displays.Write2MonospaceDisplay(d, GetDisplayText(DisplayKeys.CARRIAGE_A1_DETAIL), FontSizes.CARRIAGE_GFX);
+                    Displays.Write2MonospaceDisplay(d, GetDisplayText(DisplayKeys.CARRIAGE_A1_DETAIL), DisplayConfig.GetCarriageGfx(d));
                 } else if (Collect.IsTagged(d, TAG_A2)) {
-                    Displays.Write2MonospaceDisplay(d, GetDisplayText(DisplayKeys.CARRIAGE_A2_DETAIL), FontSizes.CARRIAGE_GFX);
+                    Displays.Write2MonospaceDisplay(d, GetDisplayText(DisplayKeys.CARRIAGE_A2_DETAIL), DisplayConfig.GetCarriageGfx(d));
                 } else if (Collect.IsTagged(d, TAG_B1)) {
-                    Displays.Write2MonospaceDisplay(d, GetDisplayText(DisplayKeys.CARRIAGE_B1_DETAIL), FontSizes.CARRIAGE_GFX);
+                    Displays.Write2MonospaceDisplay(d, GetDisplayText(DisplayKeys.CARRIAGE_B1_DETAIL), DisplayConfig.GetCarriageGfx(d));
                 } else if (Collect.IsTagged(d, TAG_B2)) {
-                    Displays.Write2MonospaceDisplay(d, GetDisplayText(DisplayKeys.CARRIAGE_B2_DETAIL), FontSizes.CARRIAGE_GFX);
+                    Displays.Write2MonospaceDisplay(d, GetDisplayText(DisplayKeys.CARRIAGE_B2_DETAIL), DisplayConfig.GetCarriageGfx(d));
                 } else if (Collect.IsTagged(d, TAG_MAINT)) {
-                    Displays.Write2MonospaceDisplay(d, GetDisplayText(DisplayKeys.CARRIAGE_MAINT_DETAIL), FontSizes.CARRIAGE_GFX);
+                    Displays.Write2MonospaceDisplay(d, GetDisplayText(DisplayKeys.CARRIAGE_MAINT_DETAIL), DisplayConfig.GetCarriageGfx(d));
                 }
             }
         }

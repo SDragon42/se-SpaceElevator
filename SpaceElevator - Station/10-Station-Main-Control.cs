@@ -139,7 +139,7 @@ namespace IngameScript {
         void OutputLog() {
             var logText = _log.GetLogText();
             Echo(logText);
-            _displaysLog.ForEach(d => Displays.Write2MonospaceDisplay(d, logText, FontSizes.LOG));
+            _displaysLog.ForEach(d => Displays.Write2MonospaceDisplay(d, logText, DisplayConfig.LOG));
         }
 
     }

@@ -207,13 +207,6 @@ namespace IngameScript {
                 return $"Speed: {speedText,8} m/s\nRange: {range,8:N1} m";
             }
 
-            public static string BuildDestinationDisplayText(string destination) {
-                var padding = (15 - destination?.Length) / 2.0 ?? 0.0;
-                var iPadding = Convert.ToInt32(Math.Round(padding, 0));
-                iPadding = (iPadding >= 0) ? iPadding : 0;
-                return "".PadLeft(iPadding, ' ') + destination;
-            }
-
             public static string BuildCargoDisplayText(double? cargoMass) {
                 return $"Cargo Mass\n{cargoMass,17:N1} kg";
             }
@@ -236,12 +229,23 @@ namespace IngameScript {
                 yield return $"   Altitude: {altitudeText,8} m";
             }
 
-            public static void Write2MonospaceDisplay(IMyTextPanel display, string text, float fontSize) {
+            public static void Write2MonospaceDisplay(IMyTextPanel display, string text, float fontSize, float textPadding = 0f, TextAlignment alignment = TextAlignment.LEFT) {
                 if (text == display.GetText()) return;
                 display.Font = LCDFonts.MONOSPACE;
                 display.FontSize = fontSize;
-                display.ContentType = VRage.Game.GUI.TextPanel.ContentType.TEXT_AND_IMAGE;
-                display.TextPadding = 0f;
+                display.ContentType = ContentType.TEXT_AND_IMAGE;
+                display.TextPadding = textPadding;
+                display.Alignment = alignment;
+                display.WriteText(text);
+            }
+
+            public static void Write2MonospaceDisplay(IMyTextPanel display, string text, DisplayConfig config) {
+                if (text == display.GetText()) return;
+                display.Font = LCDFonts.MONOSPACE;
+                display.FontSize = config.FontSize;
+                display.ContentType = ContentType.TEXT_AND_IMAGE;
+                display.TextPadding = config.TextPadding;
+                display.Alignment = config.Alignment;
                 display.WriteText(text);
             }
 
