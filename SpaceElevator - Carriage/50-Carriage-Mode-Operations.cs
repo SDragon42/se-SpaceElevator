@@ -194,13 +194,13 @@ namespace IngameScript {
             // attempt to compensate for the changing gravity force on the ship
             var gravityForceChangeCompensation = (_gravityForceOnShip / 2) * -1;
 
-            var totalMaxBreakingThrust = _descentThrusters.Sum(b => b.MaxEffectiveThrust);
+            var totalMaxBrakingThrust = _descentThrusters.Sum(b => b.MaxEffectiveThrust);
             var rangeToTarget = Vector3D.Distance(_rc.GetPosition(), _destination.Location);
-            var brakeingRange = CalcBrakeDistance(totalMaxBreakingThrust, gravityForceChangeCompensation);
+            var brakingRange = CalcBrakeDistance(totalMaxBrakingThrust, gravityForceChangeCompensation);
             var coastRange = CalcBrakeDistance(0.0, gravityForceChangeCompensation);
             var inCoastRange = (rangeToTarget <= coastRange + _settings.ApproachDistance);
-            var inBrakeRange = (rangeToTarget <= brakeingRange + _settings.ApproachDistance);
-            var inDockRange = Math.Abs(rangeToTarget - brakeingRange) < SWITCH_TO_AUTOPILOT_RANGE;
+            var inBrakeRange = (rangeToTarget <= brakingRange + _settings.ApproachDistance);
+            var inDockRange = Math.Abs(rangeToTarget - brakingRange) < SWITCH_TO_AUTOPILOT_RANGE;
 
             if (inDockRange) {
                 SetMode(CarriageMode.Transit_Docking);
@@ -224,11 +224,11 @@ namespace IngameScript {
 
         void DecentModeOps() {
             _rc.DampenersOverride = false;
-            var totalMaxBreakingThrust = _ascentThrusters.Sum(b => b.MaxEffectiveThrust);
+            var totalMaxBrakingThrust = _ascentThrusters.Sum(b => b.MaxEffectiveThrust);
             var rangeToTarget = Vector3D.Distance(_rc.GetPosition(), _destination.Location);
-            var brakeingRange = CalcBrakeDistance(totalMaxBreakingThrust, _gravityForceOnShip);
-            var inBrakeRange = (rangeToTarget <= brakeingRange + _settings.ApproachDistance);
-            var inDockRange = Math.Abs(rangeToTarget - brakeingRange) < SWITCH_TO_AUTOPILOT_RANGE;
+            var brakingRange = CalcBrakeDistance(totalMaxBrakingThrust, _gravityForceOnShip);
+            var inBrakeRange = (rangeToTarget <= brakingRange + _settings.ApproachDistance);
+            var inDockRange = Math.Abs(rangeToTarget - brakingRange) < SWITCH_TO_AUTOPILOT_RANGE;
             var inCoastZone = (!inBrakeRange && _rc.GetShipSpeed() >= _settings.TravelSpeed - 1.0);
 
             if (inCoastZone)
@@ -247,7 +247,7 @@ namespace IngameScript {
                     MaintainSpeed(_settings.DockSpeed * -1);
                     break;
                 case CarriageMode.Transit_Coast:
-                    if (rangeToTarget - brakeingRange < 300
+                    if (rangeToTarget - brakingRange < 300
                         && !_activateSpeedLimiter
                         && _inNaturalGravity)
                         _ascentThrusters[0].ThrustOverridePercentage = 0.01001f;
