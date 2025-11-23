@@ -60,7 +60,7 @@ namespace IngameScript {
                     var logText = _log.GetLogText();
                     Echo(logText);
                     foreach (var d in _displayLog) {
-                        d.ContentType = VRage.Game.GUI.TextPanel.ContentType.TEXT_AND_IMAGE;
+                        d.ContentType = ContentType.TEXT_AND_IMAGE;
                         d.TextPadding = 0f;
                         d.WriteText(logText);
                     }
@@ -71,8 +71,6 @@ namespace IngameScript {
                 Echo(ex.StackTrace);
                 Echo("##########");
                 throw ex;
-            } finally {
-                Echo(_log.GetLogText());
             }
         }
 

@@ -64,7 +64,7 @@ namespace IngameScript {
                     Echo(logText);
 
                     if (_display != null) {
-                        _display.ContentType = VRage.Game.GUI.TextPanel.ContentType.TEXT_AND_IMAGE;
+                        _display.ContentType = ContentType.TEXT_AND_IMAGE;
                         _display.TextPadding = 0f;
                         _display.WriteText(logText);
                     }

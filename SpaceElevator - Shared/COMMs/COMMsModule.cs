@@ -33,22 +33,15 @@ namespace IngameScript {
                 _igc = igc;
             }
 
-            public void AddMessageToQueue(BasePayloadMessage payload, params string[] recievers) {
-                if (recievers == null || recievers.Length == 0)
-                    recievers = new string[] { string.Empty };
-                foreach (var reciever in recievers) {
-                    var message = new CommMessage(_prog, reciever, payload.MessageType, payload.ToString());
+            public void AddMessageToQueue(BasePayloadMessage payload, params string[] receivers) {
+                if (receivers == null || receivers.Length == 0)
+                    receivers = new string[] { string.Empty };
+                foreach (var receiver in receivers) {
+                    var message = new CommMessage(_prog, receiver, payload.MessageType, payload.ToString());
                     _messageQueue.Enqueue(message);
                 }
             }
 
-            //public void TransmitQueue(IMyRadioAntenna transmitter) {
-            //    if (transmitter == null) return;
-            //    if (_messageQueue.Count == 0) return;
-            //    var message = _messageQueue.Dequeue();
-            //    var success = transmitter.TransmitMessage(message.ToString());
-            //    if (!success) _messageQueue.Enqueue(message);
-            //}
             public void TransmitQueue() {
                 if (_messageQueue.Count == 0) return;
 
