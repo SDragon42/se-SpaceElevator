@@ -20,6 +20,7 @@ using VRageMath;
 
 namespace IngameScript {
     partial class Program {
+
         class RunningSymbol {
             public double MaxTime { get; set; } = 1.6;
             readonly string[] Parts = { "(|    )", "( |   )", "(  |  )", "(   | )", "(    |)", "(   | )", "(  |  )", "( |   )" };
@@ -44,7 +45,7 @@ namespace IngameScript {
 
                 return Parts[pos];
             }
-
         }
+
     }
 }

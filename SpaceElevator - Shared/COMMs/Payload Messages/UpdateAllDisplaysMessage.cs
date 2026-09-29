@@ -1,4 +1,5 @@
-﻿using Sandbox.Game.EntityComponents;
+﻿// <mdk sortorder="205" />
+using Sandbox.Game.EntityComponents;
 using Sandbox.ModAPI.Ingame;
 using Sandbox.ModAPI.Interfaces;
 using SpaceEngineers.Game.ModAPI.Ingame;
@@ -19,6 +20,7 @@ using VRageMath;
 
 namespace IngameScript {
     partial class Program {
+
         class UpdateAllDisplaysMessage : BasePayloadMessage {
             public const string TYPE = "UpdateAllDisplaysMessage";
             public static UpdateAllDisplaysMessage CreateFromPayload(string message) {
@@ -95,5 +97,6 @@ namespace IngameScript {
                 set { _msgParts[13] = Set(value); }
             }
         }
+
     }
 }

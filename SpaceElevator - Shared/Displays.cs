@@ -19,6 +19,7 @@ using VRageMath;
 
 namespace IngameScript {
     partial class Program {
+
         static class Displays {
 
             const string WIDE_LCD_SEPARATOR = "   "; // " │ "
@@ -263,5 +264,6 @@ namespace IngameScript {
                 public int VertPosNum { get; set; }
             }
         }
+
     }
 }

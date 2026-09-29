@@ -19,6 +19,7 @@ using VRageMath;
 
 namespace IngameScript {
     partial class Program {
+
         static class RotorConstants {
             public const int RADIAN_ROUND_DIGITS = 3;
             public const float ROTOR_VELOCITY = 3f;
@@ -84,5 +85,6 @@ namespace IngameScript {
             public const string CONTROL_LOG = "[control-log]";
             public const string COMMS_LOG = "[comm-log]";
         }
+
     }
 }

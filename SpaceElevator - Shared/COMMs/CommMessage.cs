@@ -1,4 +1,5 @@
-﻿using Sandbox.Game.EntityComponents;
+﻿// <mdk sortorder="200" />
+using Sandbox.Game.EntityComponents;
 using Sandbox.ModAPI.Ingame;
 using Sandbox.ModAPI.Interfaces;
 using SpaceEngineers.Game.ModAPI.Ingame;
@@ -19,6 +20,7 @@ using VRageMath;
 
 namespace IngameScript {
     partial class Program {
+
         class CommMessage {
             private CommMessage() { }
             public CommMessage(IMyProgrammableBlock me, string targetGridName, string payloadType, string payload) {
@@ -74,7 +76,7 @@ namespace IngameScript {
                 message = tmpMsg;
                 return true;
             }
-
         }
+
     }
 }

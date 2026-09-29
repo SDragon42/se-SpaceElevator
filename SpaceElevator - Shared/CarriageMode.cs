@@ -19,6 +19,7 @@ using VRageMath;
 
 namespace IngameScript {
     partial class Program {
+
         enum CarriageMode {
             Init,
             Manual_Control,
@@ -30,5 +31,6 @@ namespace IngameScript {
             Transit_Docking,
             Docked
         }
+
     }
 }

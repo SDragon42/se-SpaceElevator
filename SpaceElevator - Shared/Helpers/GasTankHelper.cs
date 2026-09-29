@@ -20,6 +20,7 @@ using VRageMath;
 
 namespace IngameScript {
     partial class Program {
+
         static class GasTankHelper {
             public static double GetTanksFillPercentage(List<IMyTerminalBlock> tankList) {
                 var totalPercent = 0.0;
@@ -43,5 +44,6 @@ namespace IngameScript {
             public static double GetTanksFillPercentage(IEnumerable<IMyGasTank> tankList) => tankList.Average(t => t.FilledRatio);
 
         }
+
     }
 }

@@ -20,6 +20,7 @@ using VRageMath;
 
 namespace IngameScript {
     partial class Program {
+
         class ConfigCustom {
             readonly static string[] SepBlankLine = new string[] { "\n\n" };
             readonly static char[] SepNewLine = new char[] { '\n' };
@@ -84,5 +85,6 @@ namespace IngameScript {
                 public string Value { get { return _value; } set { _value = value ?? string.Empty; } }
             }
         }
+
     }
 }
