@@ -18,6 +18,7 @@ using VRage;
 using VRageMath;
 
 namespace IngameScript {
+
     static class ToPrimativeExtensions {
         public static int ToInt(this string text, int defValue = 0) {
             if (text == null) return defValue;
@@ -50,4 +51,5 @@ namespace IngameScript {
             return val;
         }
     }
+
 }

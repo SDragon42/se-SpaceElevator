@@ -1,4 +1,5 @@
-﻿using Sandbox.Game.EntityComponents;
+﻿// <mdk sortorder="205" />
+using Sandbox.Game.EntityComponents;
 using Sandbox.ModAPI.Ingame;
 using Sandbox.ModAPI.Interfaces;
 using SpaceEngineers.Game.ModAPI.Ingame;
@@ -19,6 +20,7 @@ using VRageMath;
 
 namespace IngameScript {
     partial class Program {
+
         class CarriageStatusMessage : BasePayloadMessage {
             public const string TYPE = "CarriageStats";
             public static CarriageStatusMessage CreateFromPayload(string message) {
@@ -88,8 +90,7 @@ namespace IngameScript {
                         break;
                 }
             }
-
-
         }
+
     }
 }

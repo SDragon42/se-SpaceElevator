@@ -19,6 +19,7 @@ using VRageMath;
 
 namespace IngameScript {
     partial class Program {
+
         class DisplayConfig {
             private DisplayConfig() { }
 
@@ -38,5 +39,6 @@ namespace IngameScript {
             public static readonly DisplayConfig CARGO = new DisplayConfig() { FontSize = 4.6f };
             public static readonly DisplayConfig LOG = new DisplayConfig() { FontSize = 0.5f }; // TODO: verify this is correct
         }
+
     }
 }

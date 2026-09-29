@@ -70,10 +70,7 @@ namespace IngameScript {
                     defaultValue: DEFAULT_SendStatusMessages.ToString());
 
                 config.AddKey(KEY_GpsPoint + "1",
-                    description: "These are the GPS points for the docking (as taken from the RC block).\n" +
-                                 "The \"name\" of the GPS point must be the name of the grid docking to\n" +
-                                 "at that point. Also, \"" + KEY_GpsPoint + "1\" MUST be the Lowest point.\n" +
-                                 "Additional GPS points can be made by just adding to the key list here.");
+                    description: "These are the GPS points for the docking (as taken from the RC block).\nThe \"name\" of the GPS point must be the name of the grid docking to\nat that point. Also, \"" + KEY_GpsPoint + "1\" MUST be the Lowest point.\nAdditional GPS points can be made by just adding to the key list here.");
                 config.AddKey(KEY_GpsPoint + "2");
                 config.AddKey(KEY_GpsPoint + "3");
 

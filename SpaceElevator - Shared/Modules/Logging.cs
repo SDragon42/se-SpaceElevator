@@ -20,8 +20,8 @@ using VRageMath;
 
 namespace IngameScript {
     partial class Program {
-        class Logging {
 
+        class Logging {
             readonly List<string> Lines = new List<string>();
 
             public Logging(int maxLines2Keep = 10) {
@@ -76,5 +76,6 @@ namespace IngameScript {
                 return sb.ToString();
             }
         }
+
     }
 }

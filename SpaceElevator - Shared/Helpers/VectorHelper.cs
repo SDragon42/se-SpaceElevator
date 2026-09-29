@@ -20,6 +20,7 @@ using VRageMath;
 
 namespace IngameScript {
     partial class Program {
+
         static class VectorHelper {
             public static Vector3D GpsToVector(string gpsCoordinate) {
                 string name;
@@ -46,5 +47,6 @@ namespace IngameScript {
                 return $"GPS:{label}:{v.X}:{v.Y}:{v.Z}:";
             }
         }
+
     }
 }

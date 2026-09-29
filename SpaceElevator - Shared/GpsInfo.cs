@@ -19,6 +19,7 @@ using VRageMath;
 
 namespace IngameScript {
     partial class Program {
+
         class GpsInfo {
             public GpsInfo(string rawGPS) {
                 string name;
@@ -40,5 +41,6 @@ namespace IngameScript {
             public bool NeedsClearance { get; private set; }
             public string RawGPS { get; private set; }
         }
+
     }
 }

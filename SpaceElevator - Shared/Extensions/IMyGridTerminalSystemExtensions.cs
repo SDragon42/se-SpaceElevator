@@ -18,6 +18,7 @@ using VRage;
 using VRageMath;
 
 namespace IngameScript {
+
     static class IMyGridTerminalSystemExtensions {
         public static void GetblocksOfTypeWithFirst<T>(this IMyGridTerminalSystem gts, List<IMyTerminalBlock> blockList, params Func<IMyTerminalBlock, bool>[] collectMethods) where T : class, IMyTerminalBlock {
             if (collectMethods == null || collectMethods.Length == 0) {
@@ -48,4 +49,5 @@ namespace IngameScript {
             return (temp.Count > 0) ? (T)temp[0] : null;
         }
     }
+
 }

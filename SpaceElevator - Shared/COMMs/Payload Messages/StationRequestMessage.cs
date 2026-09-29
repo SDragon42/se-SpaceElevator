@@ -1,4 +1,5 @@
-﻿using Sandbox.Game.EntityComponents;
+﻿// <mdk sortorder="205" />
+using Sandbox.Game.EntityComponents;
 using Sandbox.ModAPI.Ingame;
 using Sandbox.ModAPI.Interfaces;
 using SpaceEngineers.Game.ModAPI.Ingame;
@@ -19,6 +20,7 @@ using VRageMath;
 
 namespace IngameScript {
     partial class Program {
+
         enum StationRequests { RequestCarriage, SendCarriageTo }
 
         class StationRequestMessage : BasePayloadMessage {
@@ -36,7 +38,7 @@ namespace IngameScript {
 
             public StationRequests Request => _msgParts[0].ToEnum<StationRequests>();
             public string Extra => _msgParts[1];
-
         }
+
     }
 }

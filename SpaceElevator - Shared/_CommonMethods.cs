@@ -1,5 +1,4 @@
-﻿// <mdk sortorder="900" />
-using Sandbox.Game.EntityComponents;
+﻿using Sandbox.Game.EntityComponents;
 using Sandbox.ModAPI.Ingame;
 using Sandbox.ModAPI.Interfaces;
 using SpaceEngineers.Game.ModAPI.Ingame;
@@ -20,8 +19,6 @@ using VRageMath;
 
 namespace IngameScript {
     partial class Program {
-
-        readonly List<IMyTerminalBlock> TmpBlocks = new List<IMyTerminalBlock>();
 
         public static bool IsSameGrid(IMyTerminalBlock a, IMyTerminalBlock b) => a.CubeGrid == b.CubeGrid;
         bool IsOnThisGrid(IMyTerminalBlock b) => IsSameGrid(Me, b);

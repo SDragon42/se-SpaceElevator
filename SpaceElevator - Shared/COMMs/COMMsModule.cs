@@ -1,4 +1,5 @@
-﻿using Sandbox.Game.EntityComponents;
+﻿// <mdk sortorder="200" />
+using Sandbox.Game.EntityComponents;
 using Sandbox.ModAPI.Ingame;
 using Sandbox.ModAPI.Interfaces;
 using SpaceEngineers.Game.ModAPI.Ingame;
@@ -19,8 +20,8 @@ using VRageMath;
 
 namespace IngameScript {
     partial class Program {
-        class COMMsModule {
 
+        class COMMsModule {
             public const string BroadcastTag = "SpaceElevator";
             public const string IgcUpdateGrid = "UpdateGrid";
 
@@ -49,5 +50,6 @@ namespace IngameScript {
                 _igc.SendBroadcastMessage(BroadcastTag, message.ToString(), TransmissionDistance.AntennaRelay);
             }
         }
+
     }
 }
